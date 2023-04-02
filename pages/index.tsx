@@ -1,14 +1,19 @@
 import { NextPage } from "next"
-import Link from "next/link";
-
+import BottomNavbar from "@/components/BottomNavbar"
+import PeppiStart from "@/components/PeppiStart"
 interface Props {}
+
 
 const index: NextPage<Props> = ({}) => {
   return (
+  <div>
     <div>
-      hello Simon from Mickenator
-    <h1> Micke är fan bäst </h1>
+        <PeppiStart />
     </div>
+    <div>
+      <BottomNavbar />
+    </div>
+  </div>
   )
 }
 
