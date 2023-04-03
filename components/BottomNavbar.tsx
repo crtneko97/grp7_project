@@ -5,17 +5,17 @@ const BottomNavbar = () => {
     <nav>
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/timer">
             Timer
           </Link>
         </li>
         <li>
-          <Link href="/handbook">
+          <Link href="/schedule">
             Schema
           </Link>
         </li>
         <li>
-          <Link href="/useStateExample">
+          <Link href="/peppi">
             Peppi
           </Link>
         </li>
