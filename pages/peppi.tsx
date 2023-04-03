@@ -1,4 +1,3 @@
-import PeppiStart from "@/components/PeppiStart"
 import Image from "next/image"
 import BottomNavbar from "@/components/BottomNavbar"
 import { NextPage } from "next"
