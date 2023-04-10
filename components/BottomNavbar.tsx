@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from '@iconify/react';
 
 const BottomNavbar = () => {
   return (
@@ -6,17 +7,17 @@ const BottomNavbar = () => {
       <ul>
         <li>
           <Link href="/timer">
-            Timer
+            <Icon icon="ic:baseline-access-time-filled" style={{ fontSize: '2rem'}}/>
           </Link>
         </li>
         <li>
           <Link href="/schedule">
-            Schema
+            <Icon icon="uis:schedule" style={{ fontSize: '2rem'}}/>
           </Link>
         </li>
         <li>
           <Link href="/peppi">
-            Peppi
+            <Icon icon="mdi:bird" style={{ fontSize: '2rem'}}/>
           </Link>
         </li>
       </ul>
@@ -27,8 +28,8 @@ const BottomNavbar = () => {
           bottom: 0;
           left: 0;
           width: 100%;
-          background-color: #f2f2f2;
-          border-top: 1px solid #e6e6e6;
+          background-color: transparent;
+          text-decoration: none;
         }
 
         ul {
@@ -43,6 +44,7 @@ const BottomNavbar = () => {
           flex: 1;
           text-align: center;
           padding: 1rem 0;
+          text-decoration: none;
         }
 
         a {

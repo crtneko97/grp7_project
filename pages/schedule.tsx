@@ -3,6 +3,7 @@ import moment from "moment";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Event } from "../types/Event";
+import BottomNavbar from "@/components/BottomNavbar";
 
 const localizer = momentLocalizer(moment);
 
@@ -19,11 +20,13 @@ const CalendarPage = () => {
         end,
       };
       setEvents([...events, newEvent]);
+      console.log(newEvent)
     }
   };
 
   return (
     <div>
+      <div>
       <h1>My Calendar</h1>
       <Calendar
         localizer={localizer}
@@ -34,9 +37,14 @@ const CalendarPage = () => {
         onSelectSlot={handleSelect}
         style={{ height: "70vh" }}
       />
+      </div>
+
+        <div>
+          <BottomNavbar />
+        </div>
+
     </div>
   );
 };
 
 export default CalendarPage;
-
