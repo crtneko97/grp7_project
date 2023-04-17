@@ -5,7 +5,6 @@ interface regUser {
   password: string
 }
 
-
 const LoginForm = () => {
 
   const [user, setUser] = useState<regUser>({
