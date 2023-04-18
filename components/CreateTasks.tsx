@@ -9,6 +9,7 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
   const [title, setTitle] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+  const [time, setTime] = useState('00:00');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -16,6 +17,7 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
       title,
       startDate: new Date(startDate),
       endDate: new Date(endDate),
+      time
     };
     onSubmit(newTask);
   };
@@ -25,6 +27,15 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
       <div>
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" value={title} onChange={(event) => setTitle(event.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="time">Task Time:</label>
+        <input type="number" id="time" value={time} min="1" max="600" step="1" onChange={(event) => setTime(event.target.value)} />
+        <select id="time-unit">
+        <option value="minutes">minutes</option> //Need to be able to set time aswell.
+        <option value="hours">hours</option>
+      </select>
+
       </div>
       <div>
         <label htmlFor="startDate">Start Date:</label>

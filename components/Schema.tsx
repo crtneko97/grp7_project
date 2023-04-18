@@ -36,25 +36,7 @@ const Schema: React.FC<SchemaProps> = () => {
     currentDayMonth = currentDayMonth.clone().add(1, 'day');
   }
 
-  //Console log on daysweek (7) and months (30) <ish>
-  console.log(daysWeek);
-  console.log(daysMonth);
-
-  //Console log on weeks
-  console.log('start of week', startOfWeek.format('YYYY-MM-DD'));
-  console.log('end of week', endOfWeek.format('YYYY-MM-DD'));
-  
-  //Console log on months
-  console.log('start of month', startOfMonth.format('YYYY-MM-DD'));
-  console.log('end of month', endOfMonth.format('YYYY-MM-DD'));
-  console.log('next month', nextMonth.format('YYYY-MM-DD'));
-  console.log('previous month', previousMonth.format('YYYY-MM-DD'));
-  
-  //Console log on years
-  console.log('start of year', startOfYear.format('YYYY-MM-DD'));
-  console.log('end of year', endOfYear.format('YYYY-MM-DD'));
-
-  // Get the current date then setting  it to a variable 'currentDate'
+ // Get the current date then setting  it to a variable 'currentDate'
   const currentDate = moment();
 
   // Current day in the middle of [7] and display current day change it to orange background later
@@ -87,3 +69,23 @@ const Schema: React.FC<SchemaProps> = () => {
 };
 
 export default Schema;
+
+/*
+  //Console log on daysweek (7) and months (30) <ish>
+  //console.log(daysWeek);
+  //console.log(daysMonth);
+
+  //Console log on weeks
+  console.log('start of week', startOfWeek.format('YYYY-MM-DD'));
+  console.log('end of week', endOfWeek.format('YYYY-MM-DD'));
+  
+  //Console log on months
+  console.log('start of month', startOfMonth.format('YYYY-MM-DD'));
+  console.log('end of month', endOfMonth.format('YYYY-MM-DD'));
+  console.log('next month', nextMonth.format('YYYY-MM-DD'));
+  console.log('previous month', previousMonth.format('YYYY-MM-DD'));
+  
+  //Console log on years
+  console.log('start of year', startOfYear.format('YYYY-MM-DD'));
+  console.log('end of year', endOfYear.format('YYYY-MM-DD'));
+*/
