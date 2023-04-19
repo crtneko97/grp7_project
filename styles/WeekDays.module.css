@@ -1,0 +1,63 @@
+.weekDays {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 373px;
+  margin: 0 auto;
+}
+
+.weekDays nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weekDays nav span {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.weekDays nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.weekDays nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.weekDays nav:last-child li {
+  margin-right: 0;
+}
+
+.currentDay {
+    background-color: orange;
+  }
+
+  .registerButton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .plusIcon {
+    font-size: 20px;
+    color: white;
+  }
+  .formContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }  

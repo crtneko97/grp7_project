@@ -57,12 +57,7 @@ const Schema: React.FC<SchemaProps> = () => {
         </nav>
       ))}
 
-      {weekDays.map((day: moment.Moment) => (
-        <div key={day.format('YYYY-MM-DD')}>
-                    {day.isSame(currentDate, 'day') && <span>Current day:&nbsp;</span>}
-          <Moment format="ddd, MMM D">{day}</Moment>
-        </div>
-      ))}
+   
 
     </div>
   );
@@ -71,10 +66,15 @@ const Schema: React.FC<SchemaProps> = () => {
 export default Schema;
 
 /*
+   {weekDays.map((day: moment.Moment) => (
+        <div key={day.format('YYYY-MM-DD')}>
+                    {day.isSame(currentDate, 'day') && <span>Current day:&nbsp;</span>}
+          <Moment format="ddd, MMM D">{day}</Moment>
+        </div>
+      ))}
   //Console log on daysweek (7) and months (30) <ish>
   //console.log(daysWeek);
   //console.log(daysMonth);
-
   //Console log on weeks
   console.log('start of week', startOfWeek.format('YYYY-MM-DD'));
   console.log('end of week', endOfWeek.format('YYYY-MM-DD'));
