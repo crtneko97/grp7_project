@@ -6,6 +6,288 @@
   padding: 6rem;
   min-height: 100vh;
 }
+/*                                                  Schema sida                                            */
+
+/* Veckodagarna Style*/
+.veckoTopp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.veckoTopp li {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Schema TOP-design component */
+.topSchema {
+  background-color: #fff9f2; /* Grunden, Bakgrund på schema sidan */
+  position: sticky;
+  height: auto;
+  width: 100%;
+  padding: 0.86em;
+  z-index: 1;
+}
+
+.bigDate {
+  font-size: 1.2rem;
+}
+
+.hilightDay {
+  background-color: #ffc107;
+  border-radius: 5px 5px 5px 5px;
+  padding: 2px;
+}
+
+/* Schema Board-design component */
+.boardSchema {
+  background-color: #ffffff;
+  position: absolute;
+  margin-top: -5%;
+  width: 100%;
+  height: 84%;
+  padding: 50%;
+  border-radius: 4% 4% 0 0;
+  border-top: 1px solid #20202000;
+  -webkit-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  -moz-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  z-index: 1; /* ändra till -1  för synlighet */
+}
+
+/* Schema 'blue line' mitt på skärm */
+.vl {
+  border-left: 4px solid #561cfb;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+}
+
+/* Lägg till Task på Schema-knapp! */
+.taskKnapp {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  position: fixed;
+  bottom: 12%;
+  right: 15px;
+  font-size: 50px;
+  line-height: 40px;
+  height: 56px;
+  width: 56px;
+  background-color: #ffc107;
+  color: #202020ea;
+  cursor: pointer;
+  border-radius: 50%;
+  border-top: 1px solid #20202000;
+  -webkit-box-shadow: 0px 4px 3px rgba(1, 1, 1, 0.15);
+  -moz-box-shadow: 0px 4px 3px rgba(1, 1, 1, 0.15);
+  box-shadow: 0px 4px 3px rgba(1, 1, 1, 0.15);
+  z-index: 99;
+}
+
+.bottomNavbar {
+  background-color: #f30101;
+  position: absolute;
+  margin-top: 154%;
+  padding: 2em;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+}
+
+/*                                             Schema sida                  * AVSLUTA *                   */
+
+/*                                             Start Popup Peppi Image                                    */
+.peppiWelcome {
+  background-image: url("/public/popupPeppi.png");
+  height: auto;
+  width: 100%;
+}
+/*                                             Start Popup Peppi Image      * AVSLUTA *                    */
+
+/*                                                       Setup Task                                        */
+.setuptaskCard {
+  border: 5px solid #ffc107;
+  background-color: burlywood;
+  padding: 15px;
+  margin-top: 100%;
+
+  border-radius: 4% 4% 0 0;
+  border-top: 1px solid #20202000;
+  -webkit-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  -moz-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+}
+
+.setuptask {
+  border: 5px solid #ffc107;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.aktivitetNamn {
+  margin-left: 18px;
+}
+
+.aktivitetDate {
+  margin-left: 100px;
+}
+
+.aktivitetTid {
+  margin-left: 100px;
+}
+
+.buttonDiv {
+  border: 1px solid #ffc107;
+  align-content: center;
+  justify-content: center;
+}
+/*                                               TASK CARD END                                             */
+
+/*                                                TIMER                                                    */
+
+.timerBakgrund {
+  background-color: #fff9f2;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.timerClock {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.timerClockFrame {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 50px;
+  height: 210px;
+  width: 210px;
+  background-color: #fff9f2;
+  color: #202020ea;
+  border-radius: 50%;
+  border-color: #00000000;
+  border: dotted;
+}
+
+.timerTwelveSpike {
+  position: absolute;
+  top: 105px;
+  left: 794px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.timerNineSpike {
+  position: absolute;
+  top: 194px;
+  left: 680px;
+}
+
+.timerThreeSpike {
+  position: absolute;
+  top: 194px;
+  left: 899px;
+}
+
+.timerSixSpike {
+  position: absolute;
+  top: 334px;
+  left: 794px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+/* DESKTOP SIZE
+.timerTwelveSpike {
+  position: absolute;
+  top: 105px;
+  left: 794px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.timerNineSpike {
+  position: absolute;
+  top: 194px;
+  left: 680px;
+}
+
+.timerThreeSpike {
+  position: absolute;
+  top: 194px;
+  left: 899px;
+}
+
+.timerSixSpike {
+  position: absolute;
+  top: 334px;
+  left: 794px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+*/
+
+.timerPeppiFace {
+  text-align: center;
+  font-size: 50px;
+  line-height: 40px;
+  margin-top: 20px;
+  height: 161px;
+  width: 161px;
+  background-color: #07ff3d;
+  border-radius: 50%;
+}
+
+.digitalClock {
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.boxSnabbButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.86em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.timerSnabbButtons {
+  background-color: #ffc107;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  font-weight: 400;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 36px;
+  width: 80px;
+  border-radius: 999em 999em 999em 999em; /* HUR FAN GÖR JAG EN AVRUND KNAPP som inte ser fucked ut! */
+  cursor: pointer;
+}
+
+.timerButtons {
+  background-color: #ffc107;
+  color: #000000;
+  text-align: center;
+}
+
+/*                                                TIMER END                                                */
 
 .description {
   display: inherit;
@@ -97,7 +379,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +407,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
