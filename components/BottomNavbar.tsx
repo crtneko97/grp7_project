@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Icon } from '@iconify/react';
+import Link from "next/link"
+import { Icon } from "@iconify/react"
 
 const BottomNavbar = () => {
   return (
@@ -7,17 +7,20 @@ const BottomNavbar = () => {
       <ul>
         <li>
           <Link href="/timer">
-            <Icon icon="ic:baseline-access-time-filled" style={{ fontSize: '2rem'}}/>
+            <Icon
+              icon="ic:baseline-access-time-filled"
+              style={{ fontSize: "2rem" }}
+            />
           </Link>
         </li>
         <li>
           <Link href="/schedule">
-            <Icon icon="uis:schedule" style={{ fontSize: '2rem'}}/>
+            <Icon icon="uis:schedule" style={{ fontSize: "2rem" }} />
           </Link>
         </li>
         <li>
           <Link href="/peppi">
-            <Icon icon="mdi:bird" style={{ fontSize: '2rem'}}/>
+            <Icon icon="mdi:bird" style={{ fontSize: "2rem" }} />
           </Link>
         </li>
       </ul>
@@ -28,7 +31,7 @@ const BottomNavbar = () => {
           bottom: 0;
           left: 0;
           width: 100%;
-          background-color: transparent;
+          background-color: #ffffff;
           text-decoration: none;
         }
 
@@ -54,7 +57,7 @@ const BottomNavbar = () => {
         }
       `}</style>
     </nav>
-  );
-};
+  )
+}
 
-export default BottomNavbar;
+export default BottomNavbar

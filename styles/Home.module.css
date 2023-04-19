@@ -262,8 +262,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0.86em;
-  margin-left: 40px;
-  margin-right: 40px;
+  left: 10%;
+  right: 10%;
 }
 
 .timerSnabbButtons {
@@ -281,10 +281,23 @@
   cursor: pointer;
 }
 
+.boxtimerButton {
+}
+
 .timerButtons {
   background-color: #ffc107;
   color: #000000;
   text-align: center;
+  font-weight: bold;
+  text-align: center;
+  font-weight: 400;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 36px;
+  width: 80px;
+  border-radius: 999em 999em 999em 999em; /* HUR FAN GÖR JAG EN AVRUND KNAPP som inte ser fucked ut! */
+  cursor: pointer;
 }
 
 /*                                                TIMER END                                                */
@@ -573,7 +586,7 @@ css for the circle
 }
 
 .timer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;

@@ -1,15 +1,15 @@
-import { NextPage } from "next";
-import { useState } from "react";
-import BottomNavbar from "@/components/BottomNavbar";
-import TimerControls from "@/components/TimerControls";
+import { NextPage } from "next"
+import { useState } from "react"
+import BottomNavbar from "@/components/BottomNavbar"
+import TimerControls from "@/components/TimerControls"
 interface Props {}
 
 const Timer: NextPage<Props> = ({}) => {
-  const [time, setTime] = useState<number | null>(null);
+  const [time, setTime] = useState<number | null>(null)
 
   const handleTimeSet = (seconds: number) => {
-    setTime(seconds);
-  };
+    setTime(seconds)
+  }
 
   return (
     <div>
@@ -21,7 +21,7 @@ const Timer: NextPage<Props> = ({}) => {
         <BottomNavbar />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Timer;
+export default Timer
