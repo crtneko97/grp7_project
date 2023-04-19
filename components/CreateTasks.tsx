@@ -32,7 +32,7 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
         <label htmlFor="time">Task Time:</label>
         <input type="number" id="time" value={time} min="1" max="600" step="1" onChange={(event) => setTime(event.target.value)} />
         <select id="time-unit">
-        <option value="minutes">minutes</option> //Need to be able to set time aswell.
+        <option value="minutes">minutes</option>
         <option value="hours">hours</option>
       </select>
 

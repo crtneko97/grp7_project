@@ -1,24 +1,37 @@
-import { NextPage } from "next"
-import BottomNavbar from "@/components/BottomNavbar"
-import TimerControls from "@/components/TimerControls"
+import { NextPage } from "next";
+import { useState } from "react";
+import BottomNavbar from "@/components/BottomNavbar";
+import TimerControls from "@/components/TimerControls";
+import ManualTimerSetter from "@/components/TimerSetManually";
+
 interface Props {}
 
-
-interface Timer{}
-
 const Timer: NextPage<Props> = ({}) => {
+  const [time, setTime] = useState<number | null>(null);
+
+  const handleTimeSet = (seconds: number) => {
+    setTime(seconds);
+  };
+
   return (
-  <div>
+    <div>
       <div>
         <TimerControls />
       </div>
 
       <div>
-      <BottomNavbar />
+        {time === null ? (
+          <ManualTimerSetter onTimeSet={handleTimeSet} />
+        ) : (
+          <h1>{time}</h1>
+        )}
       </div>
-  </div>
-  )
 
-}
+      <div>
+        <BottomNavbar />
+      </div>
+    </div>
+  );
+};
 
-export default Timer
+export default Timer;
