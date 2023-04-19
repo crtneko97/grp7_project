@@ -48,6 +48,36 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
     setTimeLeft(duration * 60);
   };
 
+  const handleManualTimeChange = (value: number) => {
+    setIsPaused(true);
+    const strTimeLeft = timeLeft.toString();
+    const length = strTimeLeft.length;
+    let newTimeLeft = 0;
+    if (length < 3) {
+      newTimeLeft = value < 10 ? value : Number(`${strTimeLeft}${value}`);
+    } else {
+      const minutes = Number(strTimeLeft.slice(0, length - 2));
+      const seconds = Number(strTimeLeft.slice(length - 2, length));
+      const newSeconds = value < 10 ? value : Number(`${seconds}${value}`);
+      newTimeLeft = minutes * 60 + newSeconds;
+    }
+    setTimeLeft(newTimeLeft);
+  };
+  
+  
+  
+  
+  
+  
+
+  const handleBackspace = () => {
+    const strTimeLeft = timeLeft.toString();
+    const newTimeLeft = strTimeLeft.slice(0, strTimeLeft.length - 1);
+    setTimeLeft(Number(newTimeLeft));
+  };
+  
+  
+
   return (
     <div>
       <h1>{formatTime(timeLeft)}</h1>
@@ -57,12 +87,25 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
         <button onClick={handlePause}>Pause</button>
       )}
       <button onClick={handleReset}>Reset</button>
+      <div>
+        <button onClick={() => handleManualTimeChange(1)}>1</button>
+        <button onClick={() => handleManualTimeChange(2)}>2</button>
+        <button onClick={() => handleManualTimeChange(3)}>3</button>
+        <button onClick={() => handleManualTimeChange(4)}>4</button>
+        <button onClick={() => handleManualTimeChange(5)}>5</button>
+        <button onClick={() => handleManualTimeChange(6)}>6</button>
+        <button onClick={() => handleManualTimeChange(7)}>7</button>
+        <button onClick={() => handleManualTimeChange(8)}>8</button>
+        <button onClick={() => handleManualTimeChange(9)}>9</button>
+        <button onClick={() => handleManualTimeChange(0)}>0</button>
+        <button onClick={handleBackspace}>Backspace</button>
+      </div>
     </div>
   );
 };
 
 const TimerControls = () => {
-  const [duration, setDuration] = useState<number>(15);
+  const [duration, setDuration] = useState<number>(0);
 
   const handleButtonClick = (selectedDuration: number) => {
     setDuration(selectedDuration);
