@@ -12,16 +12,23 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
     let intervalId: NodeJS.Timeout | undefined;
     if (!isPaused) {
       intervalId = setInterval(() => {
-        setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
+        setTimeLeft((prevTimeLeft) => {
+          if (prevTimeLeft > 0) {
+            return prevTimeLeft - 1;
+          }
+          setIsPaused(true);
+          return prevTimeLeft;
+        });
       }, 1000);
     }
-
+  
     return () => {
       if (intervalId) {
         clearInterval(intervalId);
       }
     };
   }, [duration, isPaused]);
+  
 
   useEffect(() => {
     setTimeLeft(duration * 60);
@@ -64,22 +71,16 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
     setTimeLeft(newTimeLeft);
   };
   
-  
-  
-  
-  
-  
-
   const handleBackspace = () => {
     const strTimeLeft = timeLeft.toString();
     const newTimeLeft = strTimeLeft.slice(0, strTimeLeft.length - 1);
     setTimeLeft(Number(newTimeLeft));
   };
-  
-  
 
   return (
     <div>
+
+      
       <h1>{formatTime(timeLeft)}</h1>
       {isPaused ? (
         <button onClick={handleStart}>Start</button>
@@ -100,6 +101,7 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
         <button onClick={() => handleManualTimeChange(0)}>0</button>
         <button onClick={handleBackspace}>Backspace</button>
       </div>
+
     </div>
   );
 };
@@ -113,11 +115,14 @@ const TimerControls = () => {
 
   return (
     <div>
+
+    <div>
       <button onClick={() => handleButtonClick(15)}>15 min</button>
       <button onClick={() => handleButtonClick(30)}>30 min</button>
       <button onClick={() => handleButtonClick(45)}>45 min</button>
       <button onClick={() => handleButtonClick(60)}>60 min</button>
       <TimerClock duration={duration} />
+    </div>
     </div>
   );
 };
