@@ -3,9 +3,20 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
 }
+
+.loginRegisterBG {
+  background-image: url("../public/images/PeppiLoginBG.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /*position: absolute;*/
+  width: 373px;
+  height: 667px;
+}
+
 /*                                                  Schema sida                                            */
 
 /* Veckodagarna Style*/
@@ -104,7 +115,7 @@
 
 /*                                             Start Popup Peppi Image                                    */
 .peppiWelcome {
-  background-image: url("/public/popupPeppi.png");
+  background-image: url("/public/images/popupPeppi.png");
   height: auto;
   width: 100%;
 }
@@ -183,32 +194,42 @@
   border: dotted;
 }
 
-.timerTwelveSpike {
+.verticalLettersBox {
+  writing-mode: vertical-lr;
+}
+
+.timerZeroOverSpike {
   position: absolute;
-  top: 105px;
-  left: 794px;
+  top: 6px;
+  left: 180px;
   font-size: x-large;
   font-weight: bolder;
+}
+
+.timerTwelveSpike {
+  position: absolute;
+  text-orientation: mixed;
+  top: 37px;
+  left: 164px;
 }
 
 .timerNineSpike {
   position: absolute;
-  top: 194px;
-  left: 680px;
+  top: 124px;
+  left: 66px;
 }
 
 .timerThreeSpike {
   position: absolute;
-  top: 194px;
-  left: 899px;
+  top: 124px;
+  left: 290px;
 }
 
 .timerSixSpike {
   position: absolute;
-  top: 334px;
-  left: 794px;
-  font-size: x-large;
-  font-weight: bolder;
+  text-orientation: mixed;
+  top: 259px;
+  left: 164px;
 }
 
 /* DESKTOP SIZE
@@ -248,8 +269,15 @@
   margin-top: 20px;
   height: 161px;
   width: 161px;
-  background-color: #07ff3d;
+  background-color: #48c668;
   border-radius: 50%;
+}
+
+.happyEyesPeppi {
+  position: absolute;
+  margin-top: -490px;
+  margin-left: -45px;
+  z-index: 1;
 }
 
 .digitalClock {
@@ -257,13 +285,26 @@
   font-weight: 700;
 }
 
+.digitMittKnapp {
+  margin-top: 0.5%;
+}
+
 .boxSnabbButton {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0.86em;
-  left: 10%;
-  right: 10%;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.boxSnabbButton2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.86em;
+  margin-left: 12%;
+  margin-right: 12%;
 }
 
 .timerSnabbButtons {
@@ -281,7 +322,12 @@
   cursor: pointer;
 }
 
-.boxtimerButton {
+.boxTimerButton {
+}
+
+.digitalClockManualCard {
+  margin-top: -5px;
+  margin-bottom: 30px;
 }
 
 .timerButtons {
@@ -298,6 +344,80 @@
   width: 80px;
   border-radius: 999em 999em 999em 999em; /* HUR FAN GÖR JAG EN AVRUND KNAPP som inte ser fucked ut! */
   cursor: pointer;
+}
+
+.bottomButtonsManual {
+  margin-bottom: -40px;
+}
+
+.boxAvbrytBekrefta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.86em;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 19px;
+  margin-top: 2%;
+}
+
+.avbrytKnapplist {
+  color: #000000;
+}
+
+.bekreftaKnapplist {
+  color: #ffc107;
+}
+
+.manuellTimeCard {
+  display: block;
+  position: absolute;
+  background-color: #ffffff;
+  padding: 15px;
+  margin-top: -47%;
+  height: 399px;
+  width: 327px;
+
+  border-radius: 4% 4% 0 0;
+  border-top: 1px solid #20202000;
+  -webkit-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  -moz-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  z-index: 1;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Exit knapp på Manuella knappar-CARD */
+.timerExitBox {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timerExitKnapp {
+  text-decoration: none;
+  text-align: center;
+  position: static;
+  bottom: 12%;
+  font-size: 25px;
+  line-height: 19px;
+  height: 24px;
+  width: 24px;
+  background-color: #222222;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  border-top: 1px solid #20202000;
+  -webkit-box-shadow: 0px 4px 3px rgba(1, 1, 1, 0.15);
+  -moz-box-shadow: 0px 4px 3px rgba(1, 1, 1, 0.15);
+  box-shadow: 0px 4px 3px rgba(1, 1, 1, 0.15);
+  z-index: 99;
 }
 
 /*                                                TIMER END                                                */

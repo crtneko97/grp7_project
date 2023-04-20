@@ -36,35 +36,41 @@ const LoginForm = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className=" font-extrabold text-5xl">Välkommen!</h1>
-        <br />
+        <div className={styles.loginRegisterBG}>
+          <h1 className=" font-extrabold text-5xl">Välkommen!</h1>
+          <br />
 
-        <form onSubmit={handleLogin}>
-          <input
-            type="text"
-            name="email"
-            placeholder="Your email..."
-            onChange={handleChange}
-          />
-          <input type="password" name="password" onChange={handleChange} />
-          <input
-            type="submit"
-            value="Logga in"
-            className=" text-3xl font-extrabold"
-          />
-        </form>
+          <form onSubmit={handleLogin}>
+            <input
+              type="text"
+              name="email"
+              placeholder="Your email..."
+              onChange={handleChange}
+            />
+            <br />
+            <input type="password" name="password" onChange={handleChange} />
+            <br />
+            <input
+              type="submit"
+              value="Logga in"
+              className=" text-3xl font-extrabold"
+            />
+          </form>
 
-        
-        <hr className=" border border-cyan-400 border-opacity-20" />
-        <p className="font-bold text-lg">Eller logga in med</p>
-        <br />
-        <p className="text-sm font-bold">
-          Har du inget konto?{" "}
-          <Link href="/registerUser" className="text-sm font-bold text-blue-600">
-            {" "}
-            Registrera dig här
-          </Link>
-        </p>
+          <hr className=" border border-cyan-400 border-opacity-20" />
+          <p className="font-bold text-lg">Eller logga in med</p>
+          <br />
+          <p className="text-sm font-bold">
+            Har du inget konto?{" "}
+            <Link
+              href="/registerUser"
+              className="text-sm font-bold text-blue-600"
+            >
+              {" "}
+              Registrera dig här
+            </Link>
+          </p>
+        </div>
       </main>
     </>
   )
