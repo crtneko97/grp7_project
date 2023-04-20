@@ -62,7 +62,7 @@ const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
         <br />
         <p className="text-sm font-bold">
           Har du redan ett konto?{" "}
-          <Link href="/loginPeppi" className="text-sm font-bold text-blue-600">
+          <Link href="/loginPage" className="text-sm font-bold text-blue-600">
             {" "}
             Logga in
           </Link>

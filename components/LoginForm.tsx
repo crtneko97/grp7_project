@@ -54,18 +54,13 @@ const LoginForm = () => {
           />
         </form>
 
-        <Link
-          href="/schedule"
-          className=" text-3xl font-extrabold text-decoration-line: none"
-        >
-          Logga in
-        </Link>
+        
         <hr className=" border border-cyan-400 border-opacity-20" />
         <p className="font-bold text-lg">Eller logga in med</p>
         <br />
         <p className="text-sm font-bold">
           Har du inget konto?{" "}
-          <Link href="registerForm" className="text-sm font-bold text-blue-600">
+          <Link href="/registerUser" className="text-sm font-bold text-blue-600">
             {" "}
             Registrera dig här
           </Link>
