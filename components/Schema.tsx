@@ -2,18 +2,16 @@ import React from "react"
 import moment from "moment"
 import Moment from "react-moment"
 import styles from "@/styles/Home.module.css"
+import { Task } from "@/types/Task"
 import { useState } from "react"
 
 interface SchemaProps {}
 
 const Schema: React.FC<SchemaProps> = () => {
-  const startOfYear = moment().startOf("year")
-  const endOfYear = moment().endOf("year")
+
 
   const startOfMonth = moment().startOf("month")
   const endOfMonth = moment().endOf("month")
-  const nextMonth = moment().add(1, "month")
-  const previousMonth = moment().add(-1, "month")
 
   const endOfWeek = moment().endOf("week")
   const startOfWeek = moment().startOf("week")
@@ -45,15 +43,12 @@ const Schema: React.FC<SchemaProps> = () => {
   )
 
   return (
-    <div>
-      // Testing out in nav ul worked out, no style but implementing that later
-      on
+    <div>    
       {weekDays.map((day: moment.Moment) => (
         <nav key={day.format("YYYY-MM-DD")}>
           <ul>
             {day.isSame(currentDate, "day")}
-
-            <Moment format="D">{day}</Moment>
+            <Moment format="ddd, D">{day}</Moment>
           </ul>
         </nav>
       ))}
@@ -64,6 +59,13 @@ const Schema: React.FC<SchemaProps> = () => {
 export default Schema
 
 /*
+
+  const startOfYear = moment().startOf("year")
+  const endOfYear = moment().endOf("year")
+
+  const nextMonth = moment().add(1, "month")
+  const previousMonth = moment().add(-1, "month")
+
    {weekDays.map((day: moment.Moment) => (
         <div key={day.format('YYYY-MM-DD')}>
                     {day.isSame(currentDate, 'day') && <span>Current day:&nbsp;</span>}
