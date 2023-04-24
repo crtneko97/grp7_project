@@ -2,9 +2,11 @@ import { useState, useEffect } from "react"
 import styles from "@/styles/Home.module.css"
 import TimerClock from "./TimeClock"
 
+
 const TimerControls = () => {
   const [duration, setDuration] = useState<number>(0)
 
+  
   const handleButtonClick = (selectedDuration: number) => {
     setDuration(selectedDuration)
   }
@@ -49,7 +51,7 @@ const TimerControls = () => {
         <TimerClock duration={duration} />
         */}
           <h1 className={styles.digitMittKnapp} onClick={toggleManuellTime}>
-            00:00
+            {duration}
           </h1>
           <div className={isHidden ? styles.hidden : styles.visible}>
             {/* START */}

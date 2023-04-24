@@ -11,19 +11,14 @@ const CalendarPage = () => {
   }
 
   return (
-    <div>
-      <div>
+    <>
         <Schema />
-      </div>
       
-      <div>
         <CreateTaskForm onSubmit={handleSubmit}/>
-      </div>
       
-        <div>
           <BottomNavbar />
-        </div>
-    </div>
+        
+    </>
   );
 };
 

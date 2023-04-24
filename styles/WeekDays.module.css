@@ -1,155 +1,22 @@
-.page {
-  height: 100vh;
-  margin: 0;
-}
-
-.topSchema {
-  background-color: #fff9f2; /* Grunden, Bakgrund på schema sidan */
-  position: sticky;
-  height: auto;
-  width: 100%;
-  padding: 0.86em;
-  z-index: 1;
-}
-.navbar {
+.nav {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  height: 100%;
-  background-color: #fff;
-}
-
-.navbar-item {
-  font-size: 1.5em;
-  padding: 1em;
-  color: #333;
-  margin: 0;
-  display: flex;
   justify-content: center;
-}
-.task-container{
-  width: 376;
-  height: 667;
-  background-color: gray;
+  background-color: #F4E5E5;
 }
 
-.navbar-item.current-day,
-.navbar-item.current-weekday {
-  background-color: orange;
-  color: white;
-}
-
-.orangeBtn {
-  position: absolute;
-  left: 80.8%;
-  right: 4.27%;
-  top: 80.81%;
-  bottom: 10.79%;
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 50%;
-  background-color: #F26C4F;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 350px;
-}
-
-.plus {
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-}
-
-
-
-
-
-.title {
-  display: flex;
-  align-items: center;
-}
-.title h1{
-  font-size: 16px;
-  font-family: Roboto;
-}
-.title h2{
-  font-size: 20px;
-}
-.title h1,
-.title h2 {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-
-
-
-/*
-.weekDays {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 373px;
-  margin: 0 auto;
-}
-
-.weekDays nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.weekDays nav span {
-  font-size: 0.8rem;
-  margin-bottom: 5px;
-}
-
-.weekDays nav ul {
+.horizontal {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.weekDays nav li {
-  display: inline-block;
-  margin-right: 10px;
+.yearMonth {
+  display: flex;
+  background-color: #F4E5E5;
 }
-
-.weekDays nav:last-child li {
-  margin-right: 0;
-}
-
-.currentDay {
-    background-color: orange;
-  }
-
-  .registerButton {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: orange;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .plusIcon {
-    font-size: 20px;
-    color: white;
-  }
-  .formContainer {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }  
-  */

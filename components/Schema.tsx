@@ -1,7 +1,7 @@
 import React from "react"
 import moment from "moment"
 import Moment from "react-moment"
-import styles from "@/styles/Home.module.css"
+import styles from "@/styles/WeekDays.module.css"
 import { Task } from "@/types/Task"
 import { useState } from "react"
 
@@ -17,6 +17,15 @@ const Schema: React.FC<SchemaProps> = () => {
   const startOfWeek = moment().startOf("week")
 
   //Usestate testing
+
+  //header month year
+
+  const date = new Date();
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
+  const thisMonth = monthNames[monthIndex];
+  const thisYear = year;
 
   const daysWeek: string[] = []
   let currentDayWeek = startOfWeek
@@ -43,16 +52,24 @@ const Schema: React.FC<SchemaProps> = () => {
   )
 
   return (
-    <div>    
+    <>
+    <div className={styles.yearMonth}>
+      {thisMonth} {thisYear}
+    </div>
+    <div className={styles.nav}>
       {weekDays.map((day: moment.Moment) => (
         <nav key={day.format("YYYY-MM-DD")}>
-          <ul>
+          <ul className={styles.horizontal}>
             {day.isSame(currentDate, "day")}
-            <Moment format="ddd, D">{day}</Moment>
+            <Moment format="ddd D">{day}</Moment>
           </ul>
         </nav>
       ))}
     </div>
+    <div className="main">
+
+    </div>
+    </>
   )
 }
 

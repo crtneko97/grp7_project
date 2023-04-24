@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Task } from '@/types/Task';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import styles from "@/styles/CreatedTasks.module.css"
 import moment from 'moment';
 import TimePicker from 'react-time-picker';
 
@@ -31,33 +32,42 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <>
+      {/* Skapa task TODO kort */}
+      <div className={styles.taskContainer}>
+      <ul>
+        {tasks.map((task, index) => (
+          <li className={styles.createdTask} key={index}>
+            {task.taskTitle} - {moment(task.date).format('DD MMM YYYY')} - {task.time.start} to {task.time.end}
+          </li>
+        ))}
+      </ul>
+      </div>
+    <div className={styles.taskForm}>
+      <form className={styles.form} onSubmit={handleSubmit}>
           <input
+          className={styles.aktivitet}
             type="text"
             id="title"
             value={taskTitle}
-            placeholder="Skriv in din aktivitet här"
+            placeholder="Namn på aktivitet"
             onChange={(event) => setTaskTitle(event.target.value)}
           />
-        </div>
-        <div>
           <DatePicker
             selected={startDate}
             onChange={(date) => date && setStartDate(date)}
             dateFormat="dd MMM yyyy"
           />
-        </div>
-        <div>
           <label htmlFor="time">Tid</label>
           <input
             type="time"
             id="start-time"
+            list="start-time-list"
             value={startTime}
             onChange={(event) => setStartTime(event.target.value)}
             step={60 * 60}
           />
+          
           <span> - </span>
           <input
             type="time"
@@ -66,20 +76,12 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
             onChange={(event) => setEndTime(event.target.value)}
             step={60 * 60}
           />
-        </div>
 
-        <button type="submit">SKAPA AKTIVITET</button>
+        <button className={styles.subBtn} type="submit">SKAPA AKTIVITET</button>
       </form>
 
-      {/* Skapa task TODO kort */}
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            {task.taskTitle} - {moment(task.date).format('DD MMM YYYY')} - {task.time.start} to {task.time.end}
-          </li>
-        ))}
-      </ul>
     </div>
+    </>
   );
 };
 
