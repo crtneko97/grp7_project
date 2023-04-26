@@ -1,12 +1,11 @@
-
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: space-around;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-around;
 }
 
-.taskForm{
+.taskForm {
   padding-top: 40px;
   width: 100%;
   margin-top: 200px;
@@ -20,18 +19,18 @@
 }
 
 .subBtn {
-    background-color: #CBCBCB;
-    border-radius: 20px;
-    justify-content: center;
+  background-color: #cbcbcb;
+  border-radius: 20px;
+  justify-content: center;
 }
 
-.aktivitet{
-    padding-left: 50px;
-    width: 80%;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #f1f1f1;
-    box-sizing: border-box;
+.aktivitet {
+  padding-left: 50px;
+  width: 80%;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
 }
