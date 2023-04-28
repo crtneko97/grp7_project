@@ -66,11 +66,13 @@ const Schema: React.FC<SchemaProps> = () => {
   )
 
   /* onClick Manual-Time-PopUp meny */
+  /*
   const [isHidden, setIsHidden] = useState(true)
 
   function toggleManuellTime() {
     setIsHidden(!isHidden)
   }
+  */
 
   return (
     <>
