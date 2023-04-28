@@ -2,11 +2,9 @@ import { useState, useEffect } from "react"
 import styles from "@/styles/Home.module.css"
 import TimerClock from "./TimeClock"
 
-
 const TimerControls = () => {
   const [duration, setDuration] = useState<number>(0)
 
-  
   const handleButtonClick = (selectedDuration: number) => {
     setDuration(selectedDuration)
   }

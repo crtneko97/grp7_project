@@ -120,16 +120,6 @@
   z-index: 99;
 }
 
-.bottomNavbar {
-  background-color: #f30101;
-  position: absolute;
-  margin-top: 154%;
-  padding: 2em;
-  height: auto;
-  width: 100%;
-  z-index: 1;
-}
-
 /*                                             Schema sida                  * AVSLUTA *                   */
 
 /*                                             Start Popup Peppi Image                                    */
@@ -144,9 +134,10 @@
 .setuptaskCard {
   display: block;
   position: absolute;
+  background-color: #fff;
   border: 5px solid #ffffff;
   padding: 15px;
-  margin-top: 41%;
+  margin-top: 22.7%;
   height: auto;
   width: 85%;
   border-radius: 4% 4% 0 0;
@@ -154,7 +145,7 @@
   -webkit-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
   -moz-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
   box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
-  z-index: 99;
+  z-index: 2;
 }
 
 .setuptask {
@@ -209,6 +200,18 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.createdTask {
+  background-color: #561cfb;
+  border-radius: 999em 999em 999em 999em;
+  color: #ffffff;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 4%;
+}
+
 /*                                               TASK CARD END                                             */
 
 /*                                                TIMER                                                    */
@@ -423,7 +426,7 @@
   position: absolute;
   background-color: #ffffff;
   padding: 15px;
-  margin-top: -47%;
+  margin-top: -55%; /* org -37% */
   height: 399px;
   width: 327px;
 

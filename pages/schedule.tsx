@@ -11,7 +11,7 @@ const CalendarPage = () => {
     <>
       <Schema />
 
-      {/*<CreateTaskForm onSubmit={handleSubmit} /> */}
+      <CreateTaskForm onSubmit={handleSubmit} />
 
       <BottomNavbar />
     </>

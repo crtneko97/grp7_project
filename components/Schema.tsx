@@ -6,6 +6,7 @@ import styles from "@/styles/Home.module.css"
 import { Task } from "@/types/Task"
 import { useState } from "react"
 import Head from "next/head"
+import CreateTaskForm from "./CreateTasks"
 
 interface SchemaProps {}
 
@@ -63,6 +64,13 @@ const Schema: React.FC<SchemaProps> = () => {
   const weekDays: moment.Moment[] = Array.from({ length: 7 }, (_, i) =>
     moment(currentDate).add(i - 3, "day")
   )
+
+  /* onClick Manual-Time-PopUp meny */
+  const [isHidden, setIsHidden] = useState(true)
+
+  function toggleManuellTime() {
+    setIsHidden(!isHidden)
+  }
 
   return (
     <>
