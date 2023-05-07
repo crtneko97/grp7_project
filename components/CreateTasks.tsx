@@ -26,6 +26,7 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
         start: startTime,
         end: endTime,
       },
+      id: ""
     }
     onSubmit(newTask)
     setTasks([...tasks, newTask]) // Add the new task to the tasks array

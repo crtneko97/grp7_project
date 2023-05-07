@@ -6,7 +6,7 @@ import { User } from '@/types/User'
 import Link from 'next/link'
 
 
-const registerUser: NextPage = () =>{
+const RegisterUser: NextPage = () =>{
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -73,13 +73,7 @@ const registerUser: NextPage = () =>{
       </form>
 
       <div>
-        <p>Eller registrera dig med</p>
-        <img src="images/icon_google.png" alt="googleIcon" />
-        <img src="images/icon_fb.png" alt="fbIcon" />
-      </div>
-
-      <div>
-        <p>Har du redan ett konto? </p><Link href="/loginPage"> Logga in </Link>
+        <p>Har du redan ett konto? </p><Link href="/auth/signin"> Logga in </Link>
       </div>
 
     </div>
@@ -88,4 +82,4 @@ const registerUser: NextPage = () =>{
   );
 };
 
-export default registerUser;
+export default RegisterUser;

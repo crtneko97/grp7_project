@@ -1,4 +1,5 @@
 export interface Task {
+  id: string;
   taskTitle: string;
   date: Date;
   time: {
@@ -6,6 +7,7 @@ export interface Task {
     end: string;
   };
 }
+
 
 
 /*

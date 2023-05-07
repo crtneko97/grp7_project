@@ -1,174 +1,35 @@
-import { useState, useEffect } from "react"
-import styles from "@/styles/Home.module.css"
+import { useState, useEffect } from 'react';
 
 interface Props {
-  duration: number
+  duration: number;
 }
 
 const TimerClock: React.FC<Props> = ({ duration }) => {
-  const [timeLeft, setTimeLeft] = useState<number>(duration * 60)
-  const [isPaused, setIsPaused] = useState<boolean>(true)
+  const [timeLeft, setTimeLeft] = useState<number>(duration * 60);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout | undefined
-    if (!isPaused) {
-      intervalId = setInterval(() => {
-        setTimeLeft((prevTimeLeft) => {
-          if (prevTimeLeft > 0) {
-            return prevTimeLeft - 1
-          }
-          setIsPaused(true)
-          return prevTimeLeft
-        })
-      }, 1000)
-    }
+    const interval = setInterval(() => {
+      setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
+    }, 1000);
 
     return () => {
-      if (intervalId) {
-        clearInterval(intervalId)
-      }
-    }
-  }, [duration, isPaused])
-
-  useEffect(() => {
-    setTimeLeft(duration * 60)
-  }, [duration])
+      clearInterval(interval);
+    };
+  }, []);
 
   const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`
-    const formattedSeconds =
-      remainingSeconds < 10 ? `0${remainingSeconds}` : `${remainingSeconds}`
-    return `${formattedMinutes}:${formattedSeconds}`
-  }
-
-  const handleStart = () => {
-    setIsPaused(false)
-  }
-
-  const handlePause = () => {
-    setIsPaused(true)
-  }
-
-  const handleReset = () => {
-    setIsPaused(true)
-    setTimeLeft(duration * 60)
-  }
-
-  const handleManualTimeChange = (value: number) => {
-    setIsPaused(true)
-    const strTimeLeft = timeLeft.toString()
-    const length = strTimeLeft.length
-    let newTimeLeft = 0
-    if (length < 3) {
-      newTimeLeft = value < 10 ? value : Number(`${strTimeLeft}${value}`)
-    } else {
-      const minutes = Number(strTimeLeft.slice(0, length - 2))
-      const seconds = Number(strTimeLeft.slice(length - 2, length))
-      const newSeconds = value < 10 ? value : Number(`${seconds}${value}`)
-      newTimeLeft = minutes * 60 + newSeconds
-    }
-    setTimeLeft(newTimeLeft)
-  }
-
-  const handleBackspace = () => {
-    const strTimeLeft = timeLeft.toString()
-    const newTimeLeft = strTimeLeft.slice(0, strTimeLeft.length - 1)
-    setTimeLeft(Number(newTimeLeft))
-  }
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const formattedSeconds = remainingSeconds < 10 ? `0${remainingSeconds}` : `${remainingSeconds}`;
+    return `${formattedMinutes}:${formattedSeconds}`;
+  };
 
   return (
     <div>
-      <h1 className={styles.digitalClockManualCard}>{formatTime(timeLeft)}</h1>
-      {isPaused ? (
-        <button className={styles.timerButtons} onClick={handleStart}>
-          Start
-        </button>
-      ) : (
-        <button className={styles.timerButtons} onClick={handlePause}>
-          Pause
-        </button>
-      )}
-      <button className={styles.timerButtons} onClick={handleReset}>
-        Reset
-      </button>
-      {/* 7-9 */}
-      <div>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(7)}
-        >
-          7
-        </button>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(8)}
-        >
-          8
-        </button>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(9)}
-        >
-          9
-        </button>
-      </div>
-      {/* 4-6 */}
-      <div>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(4)}
-        >
-          4
-        </button>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(5)}
-        >
-          5
-        </button>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(6)}
-        >
-          6
-        </button>
-      </div>
-      {/* 1-3 */}
-      <div>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(1)}
-        >
-          1
-        </button>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(2)}
-        >
-          2
-        </button>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(3)}
-        >
-          3
-        </button>
-      </div>
-      {/* BOTTEN KNAPPAR 00 - 0 - Backspace */}
-      <div className={styles.bottomButtonsManual}>
-        <button
-          className={styles.timerButtons}
-          onClick={() => handleManualTimeChange(0)}
-        >
-          0
-        </button>
-        <button className={styles.timerButtons} onClick={handleBackspace}>
-          Backspace
-        </button>
-      </div>
+      <h1>{formatTime(timeLeft)}</h1>
     </div>
-  )
-}
-export default TimerClock
+  );
+};
+
+export default TimerClock;

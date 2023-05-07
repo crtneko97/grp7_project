@@ -19,11 +19,6 @@ const BottomNavbar = () => {
               <Icon icon="uis:schedule" style={{ fontSize: "2rem" }} />
             </Link>
           </li>
-          <li>
-            <Link href="/peppi">
-              <Icon icon="mdi:bird" style={{ fontSize: "2rem" }} />
-            </Link>
-          </li>
         </ul>
 
         <style jsx>{`

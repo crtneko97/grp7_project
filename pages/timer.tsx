@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import { useState } from "react"
 import BottomNavbar from "@/components/BottomNavbar"
 import TimerControls from "@/components/TimerControls"
+import Protected from "@/components/ifauthd"
 interface Props {}
 
 const Timer: NextPage<Props> = ({}) => {
@@ -12,15 +13,18 @@ const Timer: NextPage<Props> = ({}) => {
   }
 
   return (
-    <div>
-      <div>
-        <TimerControls />
-      </div>
-
-      <div>
-        <BottomNavbar />
-      </div>
-    </div>
+    <>
+    <Protected authenticatedComponent={
+        <div>
+         <TimerControls />
+         <BottomNavbar />
+         </div>
+      } unauthenticatedComponent={
+        <div>
+          Loading...
+        </div>
+      } />
+    </>
   )
 }
 

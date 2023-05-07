@@ -1,7 +1,10 @@
 import BottomNavbar from "@/components/BottomNavbar"
 import Schema from "@/components/Schema"
 import CreateTaskForm from "@/components/CreateTasks"
+import TaskList from "@/components/TaskListDB"
+import CreateTaskDB from "@/components/CreateTasksDB"
 import { Task } from "@/types/Task"
+import Protected from "@/components/ifauthd"
 const CalendarPage = () => {
   const handleSubmit = (task: Task) => {
     console.log(task)
@@ -9,11 +12,21 @@ const CalendarPage = () => {
 
   return (
     <>
-      <Schema />
 
-      <CreateTaskForm onSubmit={handleSubmit} />
+      <Protected authenticatedComponent={
+        <div>
+         
+         <CreateTaskDB />
+         <TaskList />
+         <Schema />
+         <BottomNavbar />
+         </div>
+      } unauthenticatedComponent={
+        <div>
+          Loading...
+        </div>
+      } />
 
-      <BottomNavbar />
     </>
   )
 }
