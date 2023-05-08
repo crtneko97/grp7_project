@@ -69,9 +69,9 @@ const CreateTaskDB = () => {
     return (
       <>
         {showForm ? (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className={styles.createtask}>
 
-          <button onClick={toggleForm}>
+          <button onClick={toggleForm} className={styles.x}>
             X
           </button>
 
@@ -123,7 +123,7 @@ const CreateTaskDB = () => {
             </label>
 
 
-            <button type="submit">
+            <button className={styles.subbe} type="submit">
               Create Task
             </button>
 

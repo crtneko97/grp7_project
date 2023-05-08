@@ -6,8 +6,8 @@ import styles from "@/styles/Home.module.css"
 import { Task } from "@/types/Task"
 import { useState } from "react"
 import Head from "next/head"
-import CreateTaskForm from "./CreateTasks"
-
+import CreateTaskDB from "./CreateTasksDB"
+import TaskList from "./TaskListDB"
 interface SchemaProps {}
 
 const Schema: React.FC<SchemaProps> = () => {
@@ -92,7 +92,6 @@ const Schema: React.FC<SchemaProps> = () => {
             <span className={styles.bigDate}> {thisYear}</span>
           </div>
         </div>
-
         <br />
         {/* Veckodagarna */}
         <div className={styles.veckoTopp}>

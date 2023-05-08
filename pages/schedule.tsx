@@ -15,10 +15,9 @@ const CalendarPage = () => {
 
       <Protected authenticatedComponent={
         <div>
-         
          <CreateTaskDB />
-         <TaskList />
          <Schema />
+         <TaskList />
          <BottomNavbar />
          </div>
       } unauthenticatedComponent={

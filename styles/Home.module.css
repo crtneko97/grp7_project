@@ -83,7 +83,7 @@
   -webkit-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
   -moz-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
   box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
-  z-index: 1; /* ändra till -1  för synlighet */
+  z-index: 0; /* ändra till -1  för synlighet */
 }
 
 /* Schema 'blue line' mitt på skärm */
@@ -147,6 +147,110 @@
   box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
   z-index: 2;
 }
+/*Här visas den mitt på skärmen nu iallafall över */
+.createtask {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border: 5px solid #ffffff;
+  width: 85%;
+  border-radius: 4% 4% 0 0;
+  border-top: 1px solid #20202000;
+  padding: 15px;
+  -webkit-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  -moz-box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  box-shadow: 0px -4px 3px rgba(1, 1, 1, 0.15);
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.taskList {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  background-color: #0077c2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.taskList h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.taskList p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.taskList button {
+  background-color: #ffffff;
+  color: #0077c2;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.x button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.createtask label {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.createtask label span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.createtask input[type="text"],
+.createtask input[type="date"],
+.createtask input[type="time"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.subbe  {
+  display: block;
+  background-color: #561cfb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subbe:hover {
+  background-color: #4515c8;
+}
+
+
 
 .setuptask {
   border: 5px solid #ffffff;

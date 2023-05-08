@@ -40,20 +40,20 @@ const TaskList = () => {
   return (
     <>
       {taskList.map((task, index) => (
-        <div key={index}>
+        <div key={index} className={styles.taskList}>
 
           <h2>{task.taskTitle}</h2>
 
           {task.date instanceof Date && (
             <p>Date: {task.date.toLocaleDateString()}</p>
           )}
-
+          
           <p>Start Time: {task.time.start}</p>
 
           <p>End Time: {task.time.end}</p>
 
           <button onClick={() => deleteTask(task.taskTitle)}>Delete</button>
-          
+
         </div>
       ))}
 
