@@ -26,7 +26,7 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
         start: startTime,
         end: endTime,
       },
-      id: ""
+      id: "",
     }
     onSubmit(newTask)
     setTasks([...tasks, newTask]) // Add the new task to the tasks array
@@ -102,7 +102,6 @@ const CreateTaskForm: React.FC<Props> = ({ onSubmit }) => {
                   onChange={(event) => setStartTime(event.target.value)}
                   step={60 * 60}
                 />
-
                 <span> - </span>
                 <input
                   className={styles.aktivitetTidSetTo}

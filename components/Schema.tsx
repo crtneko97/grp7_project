@@ -112,7 +112,6 @@ const Schema: React.FC<SchemaProps> = () => {
       {/* Kalender vy där task läggs till */}
       <div className={styles.boardSchema}>
         <div className={styles.vl}></div>
-        <div className={styles.taskKnapp}>+</div>
       </div>
     </>
   )
