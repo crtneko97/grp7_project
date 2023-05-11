@@ -47,7 +47,7 @@ const SignIn: NextPage = (props): JSX.Element => {
           
         </div>
 
-          <input className={styles.submitButton} type="submit" value="Login" />
+          <input className={styles.submitButton} type="submit" value="Logga in" />
       </form>
 
       <div>

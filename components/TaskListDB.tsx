@@ -29,35 +29,37 @@ const TaskList = () => {
     }
   };
 
-
-
-
+  console.log(taskList.length)
   
-
+  function renderTasks() {
+    const tasks = [];
   
+    for (let i = 0; i < taskList.length; i++) {
+      const task = taskList[i];
+      tasks.push(
+        
+        <div key={i} className={styles.taskList}>
+          <p>{task.taskTitle}</p>
   
-
-  return (
-    <>
-      {taskList.map((task, index) => (
-        <div key={index} className={styles.taskList}>
-
-          <h2>{task.taskTitle}</h2>
-
           {task.date instanceof Date && (
             <p>Date: {task.date.toLocaleDateString()}</p>
           )}
-          
-          <p>Start Time: {task.time.start}</p>
-
-          <p>End Time: {task.time.end}</p>
-
-          <button onClick={() => deleteTask(task.taskTitle)}>Delete</button>
-
+  
+          <p>
+            {task.time.start} - {task.time.end}{" "}
+            <button onClick={() => deleteTask(task.taskTitle)}>Delete</button>
+          </p>
         </div>
-      ))}
+      );
+    }
+  
+    return tasks;
+  }
 
-      
+
+  return (
+    <>
+    {renderTasks()}
     </>
   );
 };

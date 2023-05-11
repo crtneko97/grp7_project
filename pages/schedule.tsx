@@ -5,6 +5,7 @@ import TaskList from "@/components/TaskListDB"
 import CreateTaskDB from "@/components/CreateTasksDB"
 import { Task } from "@/types/Task"
 import Protected from "@/components/ifauthd"
+
 const CalendarPage = () => {
   const handleSubmit = (task: Task) => {
     console.log(task)
@@ -13,19 +14,21 @@ const CalendarPage = () => {
   return (
     <>
 
-      <Protected authenticatedComponent={
-        <div>
-         <CreateTaskDB />
-         <Schema />
-         <TaskList />
-         <BottomNavbar />
-         </div>
-      } unauthenticatedComponent={
-        <div>
-          Loading...
-        </div>
-      } />
-
+      <Protected
+        authenticatedComponent={
+          <div>
+            <CreateTaskDB />
+            <Schema />
+            <TaskList />
+            <BottomNavbar />
+          </div>
+        }
+        unauthenticatedComponent={
+          <div>
+            Loading...
+          </div>
+        }
+      />
     </>
   )
 }

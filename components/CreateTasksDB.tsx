@@ -11,6 +11,7 @@ const CreateTaskDB = () => {
         date: new Date(),
         time: { start: '', end: '' },
       });
+      
       const [showForm, setShowForm] = useState(false); // Sätta av och på variabel
       
 
@@ -77,31 +78,26 @@ const CreateTaskDB = () => {
 
 
 
-            <label>
-              <span>Task Title:</span>
               <input
+              className={styles.namgeAktivitet}
                 type="text"
                 name="taskTitle"
+                placeholder='Namn på aktivitet'
                 value={task.taskTitle}
                 onChange={handleInputChange}
               />
-            </label>
 
 
 
-            <label>
-              <span>Date:</span>
               <input
                 type="date"
                 name="date"
                 value={task.date.toISOString().slice(0, 10)}
                 onChange={handleDateChange}
               />
-            </label>
 
 
-            <label>
-              <span>Start Time:</span>
+            <label className={styles.pickTime}>
               <input
                 type="time"
                 name="startTime"
@@ -109,17 +105,12 @@ const CreateTaskDB = () => {
                 onChange={handleStartTimeChange}
                 
               />
-            </label>
-
-
-            <label>
-              <span>End Time:</span>
-              <input
-                type="time"
-                name="endTime"
-                value={task.time.end}
-                onChange={handleEndTimeChange}
-              />
+                <input
+                  type="time"
+                  name="endTime"
+                  value={task.time.end}
+                  onChange={handleEndTimeChange}
+                />
             </label>
 
 

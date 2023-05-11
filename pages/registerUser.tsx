@@ -53,7 +53,7 @@ const RegisterUser: NextPage = () =>{
         <input className={styles.input}
           type="text"
           name="name"
-          placeholder="Your email.."
+          placeholder="Din email.."
           value={email}
           onChange={handleEmailChange}
         />
@@ -61,7 +61,7 @@ const RegisterUser: NextPage = () =>{
         <input className={styles.input}
           type="password"
           name="password"
-          placeholder="You password.."
+          placeholder="Ditt lösenord.."
           value={password}
           onChange={handlePasswordChange}
     
