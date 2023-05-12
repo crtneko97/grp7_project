@@ -75,18 +75,20 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
   return (
     <>
       <h1>{formatTime(timeLeft)}</h1>
-      {isPaused ? (
-        <button className={styles.timerSnabbButtons} onClick={handleStart}>
-          Start
+      <div className={styles.boxSnabbButton3}>
+        {isPaused ? (
+          <button className={styles.timerSnabbButtons2} onClick={handleStart}>
+            Start
+          </button>
+        ) : (
+          <button className={styles.timerSnabbButtons} onClick={handlePause}>
+            Pause
+          </button>
+        )}
+        <button className={styles.timerSnabbButtons2} onClick={handleReset}>
+          Återställ
         </button>
-      ) : (
-        <button className={styles.timerSnabbButtons} onClick={handlePause}>
-          Pause
-        </button>
-      )}
-      <button className={styles.timerSnabbButtons} onClick={handleReset}>
-        Reset
-      </button>
+      </div>
     </>
   )
 }
