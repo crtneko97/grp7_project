@@ -47,7 +47,7 @@ const TaskList = () => {
   
           <p>
             {task.time.start} - {task.time.end}{" "}
-            <button onClick={() => deleteTask(task.taskTitle)}>Delete</button>
+            <button onClick={() => deleteTask(task.taskTitle)}>Ta bort</button>
           </p>
         </div>
       );
