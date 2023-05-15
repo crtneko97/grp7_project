@@ -29,7 +29,7 @@ const SignIn: NextPage = (props): JSX.Element => {
   return (
     <div className={styles.background}>
     <div className={styles.container}>
-      <h1 className={styles.loggain}> Log in</h1>
+      <h1 className={styles.loggain}> Logga in</h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>

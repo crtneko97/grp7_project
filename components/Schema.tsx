@@ -1,6 +1,7 @@
 import React from "react"
 import moment from "moment"
 import Moment from "react-moment"
+import "moment/locale/sv";
 //import styles from "@/styles/WeekDays.module.css"
 import styles from "@/styles/Home.module.css"
 import { Task } from "@/types/Task"
@@ -17,22 +18,24 @@ const Schema: React.FC<SchemaProps> = () => {
   const endOfWeek = moment().endOf("week")
   const startOfWeek = moment().startOf("week")
 
+  moment.locale("sv");
+
   //Usestate testing
 
   //header month year
 
   const date = new Date()
   const monthNames = [
-    "January",
-    "February",
-    "March",
+    "Januari",
+    "Februari",
+    "Mars",
     "April",
-    "May",
-    "June",
-    "July",
-    "August",
+    "Maj",
+    "Juni",
+    "Juli",
+    "Augusti",
     "September",
-    "October",
+    "Oktober",
     "November",
     "December",
   ]

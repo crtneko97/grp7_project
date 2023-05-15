@@ -78,11 +78,11 @@ const TimerClock: React.FC<Props> = ({ duration }) => {
       <div className={styles.boxSnabbButton3}>
         {isPaused ? (
           <button className={styles.timerSnabbButtons2} onClick={handleStart}>
-            Start
+            Starta
           </button>
         ) : (
           <button className={styles.timerSnabbButtons} onClick={handlePause}>
-            Pause
+            Pausa
           </button>
         )}
         <button className={styles.timerSnabbButtons2} onClick={handleReset}>
